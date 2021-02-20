@@ -2,7 +2,7 @@ let mapleader=" "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-for f in split(glob('~/.config/plugconf/*.vim'), '\n')
+for f in split(glob('~/.config/nvim/plugconf/*.vim'), '\n')
   exe 'source' f
 endfor
 
