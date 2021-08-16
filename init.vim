@@ -2,6 +2,7 @@ let mapleader=" "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+let g:coc_global_extensions = ['coc-json', 'coc-java']
 for f in split(glob('~/.config/nvim/plugconf/*.vim'), '\n')
   exe 'source' f
 endfor
@@ -120,5 +121,5 @@ highlight clear SpellLocal
 highlight SpellLocal cterm=underline gui=undercurl
 
 set termguicolors
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
