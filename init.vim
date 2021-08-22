@@ -101,6 +101,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'doums/darcula'
+Plug 'lambdalisue/suda.vim'
 call plug#end()
 "hello world"
 colorscheme snazzy
@@ -121,5 +122,3 @@ highlight clear SpellLocal
 highlight SpellLocal cterm=underline gui=undercurl
 
 set termguicolors
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
