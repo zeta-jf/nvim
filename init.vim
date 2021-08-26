@@ -1,15 +1,37 @@
+" Leader Key:
+"
 let mapleader=" "
 let maplocalleader="\\"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
-let g:coc_global_extensions = ['coc-json', 'coc-java']
-for f in split(glob('~/.config/nvim/plugconf/*.vim'), '\n')
-  exe 'source' f
-endfor
+" Key Map:
+"
+noremap <F5> :setlocal spell! spelllang=en_us<CR>
+noremap n nzz
+noremap N Nzz
+noremap K 5k
+noremap J 5j
+" split screen
+noremap Sh :set nosplitright<CR>:vsplit<CR>
+noremap Sl :set splitright<CR>:vsplit<CR>
+noremap Sk :set nosplitbelow<CR>:split<CR>
+noremap Sj :set splitbelow<CR>:split<CR>
+noremap tk :tabe<CR>
+noremap th :-tabnext<CR>
+noremap tl :+tabnext<CR>
 
-set statusline+=%{fugitive#statusline()}
 
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical resize+5<CR>
+noremap <right> :vertical resize-5<CR>
+
+
+" fugitive config:
+nnoremap <leader>gh :diffget //2<CR>
+nnoremap <leader>gl :diffget //3<CR>
+nnoremap <leader>gs :G<CR>
+
+" fzf:
 set rtp+=~/.fzf
 nnoremap <silent> <C-f> :BLines<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
@@ -17,35 +39,54 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-g> :Ag<CR>
 inoremap jk <esc>
 nnoremap tt :CocCommand explorer<CR>
-noremap n nzz
-noremap N Nzz
-" Fugitive Config:
-nmap <leader>gh :diffget //2<CR>
-nmap <leader>gl :diffget //3<CR>
-nmap <leader>gs :G<CR>
-filetype plugin indent on
-" On pressing tab, insert 2 spaces
-set expandtab
-" show existing tab with 2 spaces width
-set tabstop=4
-set softtabstop=4
-" when indenting with '>', use 2 spaces width
-set shiftwidth=4 number
+
+" Status Line:
+"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
+set statusline+=%{fugitive#statusline()}
 
-" split screen
+" Extensions:
 "
-map Sh :set nosplitright<CR>:vsplit<CR>
-map Sl :set splitright<CR>:vsplit<CR>
-map Sk :set nosplitbelow<CR>:split<CR>
-map Sj :set splitbelow<CR>:split<CR>
+let g:coc_global_extensions = ['coc-json', 'coc-java']
+for f in split(glob('~/.config/nvim/plugconf/*.vim'), '\n')
+  exe 'source' f
+endfor
 
-map <up> :res +5<CR>
-map <down> :res -5<CR>
-map <left> :vertical resize+5<CR>
-map <right> :vertical resize-5<CR>
-" Zoom
+
+" Settings:
+"
+filetype plugin indent on
+syntax enable
+exec "nohlsearch"
+set termguicolors
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4 number
+set encoding=UTF-8
+set relativenumber
+set cursorline
+set wrap
+set wildmenu
+set hlsearch
+set incsearch
+set smartcase
+set scrolloff=5
+set termguicolors
+set background=dark
+highlight clear SpellBad
+highlight SpellBad cterm=underline gui=undercurl ctermfg=Red guifg=#ff0000
+highlight clear SpellCap
+highlight SpellCap cterm=underline gui=undercurl guifg=#ff8800 ctermfg=Yellow
+highlight clear SpellRare
+highlight SpellRare cterm=underline gui=undercurl
+highlight clear SpellLocal
+highlight SpellLocal cterm=underline gui=undercurl
+
+
+" Zoom:
 "
 function! Zoom ()
     " check if is the zoomed state (tabnumber > 1 && window == 1)
@@ -64,25 +105,10 @@ function! Zoom ()
 endfunction
 
 nmap <leader>z :call Zoom()<CR>
-map tk :tabe<CR>
-map th :-tabnext<CR>
-map tl :+tabnext<CR>
 
-set encoding=UTF-8
-set relativenumber
-set cursorline
-set wrap
-set wildmenu
-set hlsearch
-exec "nohlsearch"
-set incsearch
-set smartcase
 
-set scrolloff=5
-
-noremap K 5k
-noremap J 5j
-
+" Plugins:
+"
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -104,22 +130,6 @@ Plug 'mhinz/vim-signify'
 Plug 'doums/darcula'
 Plug 'lambdalisue/suda.vim'
 call plug#end()
-"hello world"
+
+
 colorscheme snazzy
-set termguicolors
-" colorscheme gruvbox
-set background=dark
-
-syntax enable
-
-map <F5> :setlocal spell! spelllang=en_us<CR>
-highlight clear SpellBad
-highlight SpellBad cterm=underline gui=undercurl ctermfg=Red guifg=#ff0000
-highlight clear SpellCap
-highlight SpellCap cterm=underline gui=undercurl guifg=#ff8800 ctermfg=Yellow
-highlight clear SpellRare
-highlight SpellRare cterm=underline gui=undercurl
-highlight clear SpellLocal
-highlight SpellLocal cterm=underline gui=undercurl
-
-set termguicolors
