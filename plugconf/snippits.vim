@@ -6,4 +6,4 @@ autocmd Filetype markdown inoremap ,i ** <++><Esc>F*i
 autocmd Filetype markdown inoremap ,d `` <++><Esc>F*i
 autocmd Filetype * inoremap ,1 () <++><Esc>F)i
 autocmd Filetype * inoremap ,2 [] <++><Esc>F]i
-autocmd Filetype * inoremap ,3 {} <Esc>F}i<Enter><Enter><Esc>ki
+autocmd Filetype * inoremap ,3 {} <Esc>F}i<Enter><Esc>ko

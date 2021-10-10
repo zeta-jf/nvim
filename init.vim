@@ -10,6 +10,8 @@ noremap n nzz
 noremap N Nzz
 noremap K 5k
 noremap J 5j
+noremap H ^
+noremap L $
 " split screen
 noremap Sh :set nosplitright<CR>:vsplit<CR>
 noremap Sl :set splitright<CR>:vsplit<CR>
@@ -25,18 +27,6 @@ noremap <down> :res -5<CR>
 noremap <left> :vertical resize+5<CR>
 noremap <right> :vertical resize-5<CR>
 
-
-" fugitive config:
-nnoremap <leader>gh :diffget //2<CR>
-nnoremap <leader>gl :diffget //3<CR>
-nnoremap <leader>gs :G<CR>
-
-" fzf:
-set rtp+=~/.fzf
-nnoremap <silent> <C-f> :BLines<CR>
-nnoremap <silent> <C-b> :Buffers<CR>
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-g> :Ag<CR>
 inoremap jk <esc>
 nnoremap tt :CocCommand explorer<CR>
 
@@ -76,6 +66,16 @@ set smartcase
 set scrolloff=5
 set termguicolors
 set background=dark
+set ruler
+set undofile
+set undodir=~/.vim-undo
+set dir=~/tmp,/tmp
+set sidescroll=1
+set sidescrolloff=7
+set scrolloff=3
+if has("nvim")
+    set inccommand=nosplit
+endif
 highlight clear SpellBad
 highlight SpellBad cterm=underline gui=undercurl ctermfg=Red guifg=#ff0000
 highlight clear SpellCap
@@ -116,10 +116,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'connorholyday/vim-snazzy'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/vim-peekaboo'
-
-Plug 'morhetz/gruvbox'
 Plug 'gcmt/wildfire.vim'
-
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
@@ -127,7 +124,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
-Plug 'doums/darcula'
 Plug 'lambdalisue/suda.vim'
 call plug#end()
 
