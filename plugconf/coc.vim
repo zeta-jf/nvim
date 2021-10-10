@@ -92,7 +92,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 "  " Update signature help on jump placeholder.
 "  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 "augroup end
-nnoremap <silent> <leader>p :call CocActionAsync('doHover')<cr>
+nnoremap <silent> <leader>dh :call CocActionAsync('doHover')<cr>
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)

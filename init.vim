@@ -29,6 +29,7 @@ noremap <right> :vertical resize-5<CR>
 
 inoremap jk <esc>
 nnoremap tt :CocCommand explorer<CR>
+nnoremap <leader>p "0p
 
 " Status Line:
 "
@@ -125,6 +126,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'lambdalisue/suda.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'simnalamburt/vim-mundo'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
