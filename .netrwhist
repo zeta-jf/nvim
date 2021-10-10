@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/usr/share/nvim/runtime/syntax'
+let g:netrw_dirhist_5='/home/juefei/.config/nvim/plugconf'
+let g:netrw_dirhist_4='/home/juefei/.zsh/zsh-autosuggestions'
+let g:netrw_dirhist_3='/home/juefei/juefei/java/learn-kafka'
+let g:netrw_dirhist_2='/home/juefei/juefei/java/juc/src/main/java'
+let g:netrw_dirhist_1='/home/juefei/.config/scripts'

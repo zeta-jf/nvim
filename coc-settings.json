@@ -1,4 +1,8 @@
 {
+    "explorer.keyMappings.global": {
+        "J": false,
+        "K": false
+    },
     "explorer.icon.enableNerdfont": true,
     "languageserver": {
     "haskell": {
